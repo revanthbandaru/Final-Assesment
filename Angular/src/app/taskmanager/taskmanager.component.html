@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-md-6 card card-body">
+        
+        <form action="" #form='ngForm' (ngSubmit) ="sendData(form.value)">
+            <legend>ADD Task</legend>
+        
+            <div class="form-group">
+                <label for="">input name</label>
+                <input type="text" name="user" #user="ngModel" ngModel class="form-control" id="" placeholder="enter your name">
+            </div>
+        
+            
+        
+            <button type="submit" class="btn btn-primary">add</button>
+        </form>
+        
+    </div>
+</div>
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark text-white">
+            <tr>
+                <th>Name</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of users"> 
+                    <td>{{i.user}}
+                        <button type="submit" class="btn btn-outline-danger float-right"(click)="deleteData(user)">delete</button>
+                    </td>
+                    
+            </tr>
+        </tbody>
+    </table>
+</div>
